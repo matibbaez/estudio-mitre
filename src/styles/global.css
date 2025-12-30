@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@300;400;600&display=swap');
+
+:root {
+  /* Colores Premium */
+  --color-navy-dark: #080c13;
+  --color-navy-card: #0f1623;
+  --color-gold-muted: #bfa17a;
+  --color-gold-bright: #e6cfa3;
+  --color-text-white: #f1f5f9;
+  --color-text-gray: #94a3b8;
+
+  /* Tipografía */
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Manrope', sans-serif;
+
+  /* Layout */
+  --container-width: 1024px; 
+  --nav-height: 90px;
+}
+
+html {
+  background-color: var(--color-navy-dark);
+  color: var(--color-text-white);
+  font-family: var(--font-body);  
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  
+  /* FONDO LIMPIO Y PROFUNDO */
+  /* Un degradado que empieza un poco más claro arriba (luz) y se oscurece abajo */
+  background: radial-gradient(circle at 50% top, #131b29 0%, var(--color-navy-dark) 100%);
+  background-attachment: fixed; /* Para que el fondo no se mueva al scrollear */
+  
+  /* Asegura que ocupe todo el alto */
+  min-height: 100vh;
+}
+
+/* Títulos Responsive: Se adaptan automáticamente */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  margin: 0;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem; /* Un poco más de aire a los costados */
+}
+
+/* Botones con mejor tacto para mobile */
+.btn-primary {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-gold-muted);
+  border: 1px solid var(--color-gold-muted);
+  padding: 0.8rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background: var(--color-gold-muted);
+  color: var(--color-navy-dark);
+  box-shadow: 0 0 20px rgba(191, 161, 122, 0.2);
+}
+
+/* Ajuste móvil para botones: Ancho completo para facilitar el click */
+@media (max-width: 768px) {
+  .btn-primary {
+    width: 100%; 
+    box-sizing: border-box;
+  }
+}
